@@ -1,0 +1,28 @@
+Determining if the function sgemm_ exists failed with the following output:
+Change Dir: /home/ensimag/Downloads/Couverture_Derivative/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/ninja cmTC_51b10 && [1/2] Building C object CMakeFiles/cmTC_51b10.dir/CheckFunctionExists.c.o
+[2/2] Linking C executable cmTC_51b10
+FAILED: cmTC_51b10 
+: && /usr/bin/clang -Wall -DCHECK_FUNCTION_EXISTS=sgemm_  CMakeFiles/cmTC_51b10.dir/CheckFunctionExists.c.o -o cmTC_51b10   && :
+/usr/bin/ld: CMakeFiles/cmTC_51b10.dir/CheckFunctionExists.c.o: in function `main':
+CheckFunctionExists.c:(.text+0x17): undefined reference to `sgemm_'
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+ninja: build stopped: subcommand failed.
+
+
+
+Determining if the function dpstrf exists failed with the following output:
+Change Dir: /home/ensimag/Downloads/Couverture_Derivative/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/ninja cmTC_0303f && [1/2] Building C object CMakeFiles/cmTC_0303f.dir/CheckFunctionExists.c.o
+[2/2] Linking C executable cmTC_0303f
+FAILED: cmTC_0303f 
+: && /usr/bin/clang -Wall -DCHECK_FUNCTION_EXISTS=dpstrf  CMakeFiles/cmTC_0303f.dir/CheckFunctionExists.c.o -o cmTC_0303f   && :
+/usr/bin/ld: CMakeFiles/cmTC_0303f.dir/CheckFunctionExists.c.o: in function `main':
+CheckFunctionExists.c:(.text+0x17): undefined reference to `dpstrf'
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+ninja: build stopped: subcommand failed.
+
+
+
