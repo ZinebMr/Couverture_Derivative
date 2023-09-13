@@ -111,12 +111,12 @@ int main(int argc, char **argv){
 
     // ===================== Calculer le prix de l'option avec la méthode price de MonteCarlo =======================
     double prix, std_dev;
-    mc.price(prix, std_dev);
-    PnlVect* delta_intial = pnl_vect_create_from_zero(size);
-    PnlVect* delta_std_dev_intial = pnl_vect_create_from_zero(size);
+    PnlVect* delta = pnl_vect_create(size);
+    PnlVect* std_dev_delta = pnl_vect_create(size);
+    mc.price_delta(prix, std_dev, delta, std_dev_delta);
 
     // ===================== Stocker les résultats de pricing dans la structure PricingResults =======================
-    PricingResults res(prix, std_dev, delta_intial, delta_std_dev_intial);
+    PricingResults res(prix, std_dev, delta, std_dev_delta);
     
     // ===================== Afficher les resultats sur la console ====================================================
     std::cout << res << std::endl;

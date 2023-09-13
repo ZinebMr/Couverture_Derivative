@@ -14,11 +14,11 @@ class BlackScholesModel
     PnlVect* sigma_; /// vecteur de volatilités
     PnlVect* spot_;  /// valeurs initiales des sous-jacents
 
-
-
-    /** Méthode pour calculer le nouvel actif
+    /** 
+     * Méthode pour calculer le nouvel actif
     */ 
-    void ComputeNewAssetValue(int assetIndex,PnlMat* correlationMatrix, PnlVect* g,int n, double step,PnlMat* path);
+    void ComputeNewAssetValue(int assetIndex, PnlMat* correlationMatrix, PnlVect* g, int n, double step, PnlMat* path);
+
     /**
      * Génère une trajectoire du modèle et la stocke dans path
      *

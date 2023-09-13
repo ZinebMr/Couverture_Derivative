@@ -50,4 +50,14 @@ class MonteCarlo
      * @param[out] std_dev contient l'écart type de l'estimateur
      */
     void delta(PnlVect* delta, PnlVect* std_dev);
+
+    /**
+     * Calcule le prix et la composition de l'option à la date 0
+     *
+     * @param[out] prix valeur de l'estimateur Monte Carlo
+     * @param[out] std_dev écart type de l'estimateur
+     * @param[out] delta contient le vecteur de delta
+     * @param[out] std_dev_delta contient l'écart type de l'estimateur
+     */
+    void price_delta(double& prix, double& std_dev , PnlVect* delta, PnlVect* std_dev_delta);
 };
