@@ -53,6 +53,11 @@ pnl_add_postbuild(test_json_reader)
 add_executable(mc-example src/mc_example.cpp)
 target_link_libraries(mc-example ${LIBS})
 
+add_executable(testOption src/testOptions.cpp src/Option.cpp src/Asian.cpp src/Performance.cpp src/Basket.cpp)
+target_link_libraries(testOption
+    ${PNL_LIBRARIES}   
+)
+
 # Print compiler flags
 get_directory_property(DirDefs COMPILE_DEFINITIONS)
 message(STATUS "COMPILE_DEFINITIONS = ${DirDefs}")
