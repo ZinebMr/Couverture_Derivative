@@ -14,8 +14,8 @@ void MonteCarlo::price(double& prix, double& std_dev) {
         prix_carre += payOff * payOff ;
         pnl_mat_free(&path);
     }
-    prix =  exp_r * (1.0 / nbSamples_ ) * prix;
-    std_dev = std::sqrt ((exp_r * exp_r * (1.0 / nbSamples_ ) * prix_carre) - prix * prix) ;
+    prix =  exp_r * prix / nbSamples_;
+    std_dev = std::sqrt ((exp_r * exp_r * (1.0 / nbSamples_ ) * prix_carre) - prix * prix)  / std::sqrt(nbSamples_) ;
 }
 
 void MonteCarlo::price(const PnlMat* past, double t, double& prix, double& std_dev) {
@@ -30,8 +30,8 @@ void MonteCarlo::price(const PnlMat* past, double t, double& prix, double& std_d
         prix_carre += payOff * payOff ;
         pnl_mat_free(&path);
     }
-    prix =  exp_r * (1.0 / nbSamples_ ) * prix;
-    std_dev =  std::sqrt ((exp_r * exp_r * (1.0 / nbSamples_ ) * prix_carre) - prix * prix) ;
+    prix =  exp_r * prix / nbSamples_ ;
+    std_dev =  std::sqrt ((exp_r * exp_r * (1.0 / nbSamples_ ) * prix_carre) - prix * prix ) / std::sqrt(nbSamples_);
 
 
 }

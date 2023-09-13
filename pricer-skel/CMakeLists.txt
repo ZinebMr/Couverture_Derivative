@@ -53,9 +53,15 @@ pnl_add_postbuild(test_json_reader)
 add_executable(mc-example src/mc_example.cpp)
 target_link_libraries(mc-example ${LIBS})
 
-add_executable(testOption src/testOptions.cpp src/Option.cpp src/Asian.cpp src/Performance.cpp src/Basket.cpp)
-target_link_libraries(testOption
+#add_executable(testOption src/testOptions.cpp src/Option.cpp src/Asian.cpp src/Performance.cpp src/Basket.cpp)
+#target_link_libraries(testOption
+#    ${PNL_LIBRARIES}   
+#)
+
+add_executable(price0 src/price0.cpp src/Option.cpp src/Asian.cpp src/Performance.cpp src/Basket.cpp src/MonteCarlo.cpp src/BlackScholesModel.cpp src/json_helper.cpp src/PricingResults.cpp) 
+target_link_libraries(price0
     ${PNL_LIBRARIES}   
+    nlohmann_json::nlohmann_json
 )
 
 # Print compiler flags
